@@ -25,7 +25,7 @@ const StudentSchema = new mongoose.Schema({
   status: {
     type: String,
     required: true,
-    enum: ['Studying', 'On leave', 'Graduated'],
+    enum: ['Studying', 'Dropped Out', 'Graduated'],
     default: 'Studying'
   }
 });

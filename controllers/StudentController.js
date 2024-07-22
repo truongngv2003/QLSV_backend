@@ -14,7 +14,7 @@ class StudentController {
   //GET student by studentId
   async getStudentById(req, res) {
     try {
-      const students = await Student.find({ studentId: req.query.studentId });
+      const students = await Student.find({ studentId: req.params.studentId });
       res.json(students);
     } catch (err) {
       res.status(500).json({ message: err.message });
