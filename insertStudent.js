@@ -1,7 +1,11 @@
-const mongoose = require('mongoose');
-const Student = require('./models/Student'); // Đảm bảo rằng đường dẫn đúng với model Student của bạn
+// $ node insertStudent.js  // để chèn dữ liệu vào db
 
-mongoose.connect('mongodb+srv://freeCodeCampTruong:123CodeGa@cluster0.mgj6dtm.mongodb.net/QLSV?retryWrites=true&w=majority&appName=Cluster0');
+const mongoose = require('mongoose');
+const Student = require('./models/Student');
+
+require('dotenv').config();
+const MONGO_URI = process.env.MONGO_URI;
+mongoose.connect(MONGO_URI);
 
 const students = [
   { studentId: "20215295", fullName: "Lê Trọng Bảo An", dateOfBirth: "2003-09-15", className: "Khoa học máy tính 02-K66", program: "Khoa học Máy tính 2021", status: "Studying" },
